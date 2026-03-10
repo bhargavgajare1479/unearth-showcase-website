@@ -34,7 +34,7 @@ export default function InstallCommand() {
 
   return (
     <div className="flex items-center justify-between w-full max-w-md bg-[#F9FAFB] border border-[#E5E7EB] rounded-2xl p-1.5 shadow-sm">
-      <code className="px-3 text-sm font-mono text-[#374151] truncate select-all">
+      <code className="px-3 text-sm text-[#374151] truncate select-all">
         {command}
       </code>
       <button

@@ -47,10 +47,10 @@ export default function SectionTitle({
 
     return (
         <div ref={containerRef} className="mb-16 space-y-4">
-            <p className="reveal-item text-sm font-mono uppercase tracking-widest text-primary">
+            <p className="reveal-item text-sm uppercase tracking-widest text-primary">
                 {label}
             </p>
-            <h2 className="reveal-item text-3xl sm:text-4xl font-bold leading-tight">
+            <h2 className="reveal-item text-3xl sm:text-4xl font-bold leading-tight font-heading">
                 {title}
             </h2>
             {description && (

@@ -5,17 +5,19 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
     HardDrive,
+    FileDigit,
     FileSearch,
     Clock,
     ShieldCheck,
     Search,
     Brain,
     Globe,
-    FileDigit,
+    Terminal,
 } from "lucide-react";
 import Section from "@/components/layout/Section";
 import SectionContainer from "@/components/layout/SectionContainer";
 import SectionTitle from "@/components/layout/SectionTitle";
+import TiltedCard from "@/components/TiltedCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,49 +26,55 @@ const FEATURES = [
         icon: HardDrive,
         title: "Deleted File Recovery",
         description:
-            "Recover deleted files from Btrfs and XFS file systems using metadata analysis and signature-based file carving.",
+            "Unearth can recover deleted files from Btrfs and XFS file systems. It uses a combination of metadata analysis and file carving to locate and reconstruct files that have been removed from the system.",
     },
     {
         icon: FileDigit,
-        title: "File Carving",
+        title: "File Carving and Format Detection",
         description:
-            "Signature-based recovery of images, documents, archives, videos, and audio files from raw disk data.",
+            "The platform scans raw disk data and identifies files using their unique signatures, also known as magic numbers. This allows the system to detect and recover files even when file names or extensions are missing.",
     },
     {
         icon: FileSearch,
         title: "Metadata Extraction",
         description:
-            "Extract timestamps, inode numbers, permissions, EXIF data, and document metadata for forensic analysis.",
+            "Unearth extracts important metadata from recovered files, such as timestamps, permissions, and embedded information from images or documents. This helps investigators understand when and how the files were created or modified.",
     },
     {
         icon: Clock,
         title: "Timeline Reconstruction",
         description:
-            "Organize recovered files into chronological timelines to understand the sequence of digital events.",
+            "All recovered files are organised into a chronological timeline. This allows investigators to see the sequence of events on the system and identify suspicious activity more easily.",
     },
     {
         icon: ShieldCheck,
-        title: "SHA256 Integrity",
+        title: "File Integrity Verification",
         description:
-            "Every recovered file is hashed using SHA256 to maintain chain of custody and verify evidence authenticity.",
+            "Each recovered file is assigned a SHA256 hash. This ensures that the evidence remains unchanged and helps maintain the chain of custody during an investigation.",
     },
     {
         icon: Search,
-        title: "Keyword Investigation",
+        title: "Keyword Search",
         description:
-            "Search recovered files for keywords like password, confidential, secret, and financial records.",
+            "Investigators can search through recovered text files using keywords. This makes it easier to locate specific information such as passwords, confidential terms, or other relevant content.",
     },
     {
         icon: Brain,
-        title: "AI Media Analysis",
+        title: "AI-Based Media and Content Analysis",
         description:
-            "Detect manipulated media, misinformation patterns, misleading content, and unreliable sources using AI.",
+            "Unearth includes an AI analysis component that can examine images, videos, audio, text, and URLs. It helps identify manipulated media, analyse content context, and evaluate the credibility of information.",
     },
     {
         icon: Globe,
-        title: "Browser Extension",
+        title: "Browser Extension for Quick Analysis",
         description:
-            "Analyze social media posts directly from the browser with a Fact Check button and Misinformation Immunity Score.",
+            "A browser extension allows users to analyse content directly from web pages or social media posts. This makes it easier to investigate suspicious online content without leaving the browser.",
+    },
+    {
+        icon: Terminal,
+        title: "Multiple User Interfaces",
+        description:
+            "The platform provides both a command line interface and a graphical interface. This allows users to choose the environment that best suits their workflow, whether they prefer terminal-based tools or a visual dashboard.",
     },
 ];
 
@@ -100,31 +108,40 @@ export default function Features() {
     }, []);
 
     return (
-        <Section id="features" className="bg-background">
-            <SectionContainer>
+        <Section id="features" className="bg-background font-outfit">
+            <SectionContainer className="max-w-7xl">
                 <SectionTitle
                     label="Capabilities"
                     title="Core Features"
-                    description="A comprehensive toolkit for digital forensic investigation and content analysis."
+                    description="A complete toolkit designed for digital forensic investigation and content analysis..."
                 />
 
                 <div
                     ref={gridRef}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
                     {FEATURES.map((feature) => {
                         const Icon = feature.icon;
                         return (
-                            <div key={feature.title} className="feature-card">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center">
-                                        <Icon size={20} className="text-primary" />
+                            <div key={feature.title} className="feature-card h-full">
+                                <TiltedCard
+                                    containerHeight="100%"
+                                    containerWidth="100%"
+                                    rotateAmplitude={12}
+                                    scaleOnHover={1.02}
+                                >
+                                    <div className="flex flex-col h-full">
+                                        <div className="flex items-center gap-4 mb-5">
+                                            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                                <Icon size={24} className="text-primary" />
+                                            </div>
+                                            <h3 className="font-semibold text-lg font-heading leading-tight">{feature.title}</h3>
+                                        </div>
+                                        <p className="text-text-muted leading-relaxed text-sm lg:text-base flex-grow">
+                                            {feature.description}
+                                        </p>
                                     </div>
-                                    <h3 className="font-semibold text-lg">{feature.title}</h3>
-                                </div>
-                                <p className="text-text-muted leading-relaxed text-sm">
-                                    {feature.description}
-                                </p>
+                                </TiltedCard>
                             </div>
                         );
                     })}

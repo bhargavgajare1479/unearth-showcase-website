@@ -2,11 +2,11 @@ import { Github } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="border-t border-foreground/5">
+        <footer className="border-t border-foreground/5 font-outfit">
             <div className="mx-auto max-w-3xl px-8 sm:px-16 py-12">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                     <div className="flex flex-col items-center sm:items-start gap-1">
-                        <span className="text-sm font-semibold">Unearth</span>
+                        <span className="text-sm font-semibold font-heading">Unearth</span>
                         <span className="text-xs text-text-muted">
                             Exposing what lies beneath the surface.
                         </span>

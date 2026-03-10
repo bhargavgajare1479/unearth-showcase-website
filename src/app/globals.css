@@ -21,8 +21,8 @@
     --error: #dc2626;
 
     /* Fonts */
-    --font-outfit: var(--font-outfit);
-    --font-sans: var(--font-outfit);
+    --font-heading: var(--font-nord);
+    --font-content: var(--font-outfit);
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
@@ -42,8 +42,8 @@
     --color-text-secondary: var(--text-secondary);
     --color-text-muted: var(--text-muted);
 
-    --font-outfit: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
-    --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+    --font-heading: var(--font-heading);
+    --font-content: var(--font-content);
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
@@ -57,7 +57,21 @@
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-outfit), system-ui, sans-serif;
+    font-family: var(--font-content);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+code,
+pre {
+    font-family: var(--font-mono);
 }
 
 html,
@@ -103,6 +117,9 @@ body {
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    transition: none !important;
+    /* Let GSAP scrub dimensions smoothly */
 }
 
 /* ── Navbar glass ── */

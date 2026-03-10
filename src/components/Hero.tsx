@@ -55,17 +55,17 @@ export default function Hero() {
 
       {/* Bottom-left content */}
       <div className="absolute bottom-0 left-0 w-full px-8 sm:px-16 pb-20 sm:pb-28">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-6xl">
           <div className="space-y-6 relative z-10 max-w-xl">
             <p
               ref={labelRef}
-              className="text-sm font-mono uppercase tracking-widest text-primary font-bold"
+              className="text-sm uppercase tracking-widest text-primary font-bold"
               style={{ opacity: 0 }}
             >
               Digital Forensics Platform
             </p>
 
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-none flex">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-none flex font-heading">
               {titleText.map((char, i) => (
                 <span
                   key={i}
@@ -85,7 +85,7 @@ export default function Hero() {
               className="text-xl text-text-secondary leading-relaxed max-w-md font-medium"
               style={{ opacity: 0 }}
             >
-              Exposing what lies beneath the surface.
+              Exposing what lies beneath the surface...
             </p>
 
             <div ref={actionsRef} className="space-y-4 pt-4" style={{ opacity: 0 }}>

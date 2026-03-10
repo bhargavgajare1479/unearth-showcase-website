@@ -9,19 +9,17 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main>
+      <main className="font-outfit">
         <Hero />
+        <div className="section-divider" />
+        <Demo />
         <div className="section-divider" />
         <Project />
         <div className="section-divider" />
         <Features />
         <div className="section-divider" />
-        <Demo />
-        <div className="section-divider" />
         <Team />
       </main>
-      <Footer />
     </>
   );
 }

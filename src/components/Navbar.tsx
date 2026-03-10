@@ -46,11 +46,11 @@ export default function Navbar() {
     return (
         <nav
             ref={navRef}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "nav-glass" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all font-outfit duration-300 ${scrolled ? "nav-glass" : "bg-transparent"
                 }`}
             style={{ opacity: 0 }}
         >
-            <div className="mx-auto max-w-7xl flex items-center justify-between px-6 sm:px-10 py-4">
+            <div className="mx-auto max-w-6xl flex items-center justify-between px-6 sm:px-10 py-4">
                 {/* Logo */}
                 <a
                     href="#hero"

@@ -1,78 +1,87 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Play } from "lucide-react";
-import Section from "@/components/layout/Section";
-import SectionContainer from "@/components/layout/SectionContainer";
-import SectionTitle from "@/components/layout/SectionTitle";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 export default function Demo() {
-    const frameRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef(null);
+    const [isMuted, setIsMuted] = useState(true);
+    const [showText, setShowText] = useState(true);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"],
+    });
+
+    const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+    const scrollOpacity = useTransform(scrollYProgress, [0.8, 1], [1, 0.5]);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            if (!frameRef.current) return;
+        // Hide text after 3 seconds
+        const timer = setTimeout(() => {
+            setShowText(false);
+        }, 3000);
 
-            gsap.fromTo(
-                frameRef.current,
-                { y: 60, opacity: 0, scale: 0.96 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: frameRef.current,
-                        start: "top 85%",
-                        once: true,
-                    },
-                }
-            );
-        }, frameRef);
-
-        return () => ctx.revert();
+        return () => clearTimeout(timer);
     }, []);
 
-    return (
-        <Section id="demo" className="bg-background">
-            <SectionContainer>
-                <SectionTitle
-                    label="Demo"
-                    title="See Unearth in Action"
-                    description="Watch how the platform recovers deleted files, analyzes content, and generates forensic reports."
-                />
+    const toggleMute = () => {
+        setIsMuted(!isMuted);
+    };
 
-                <div ref={frameRef} className="demo-frame" style={{ opacity: 0 }}>
-                    {/* Video embed — replace src with actual demo video URL */}
-                    <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                        {/* Placeholder state */}
-                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-zinc-900 to-zinc-950">
-                            <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/10">
-                                <Play size={28} className="text-white ml-1" />
+    return (
+        <section ref={containerRef} id="demo" className="h-[200vh] relative bg-background">
+            <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden group">
+                <motion.div
+                    style={{ scale }}
+                    className="w-full h-full relative"
+                >
+                    <AnimatePresence>
+                        {showText && (
+                            <div className="absolute inset-0 bg-black/10 z-10 flex items-center justify-center pointer-events-none">
+                                <motion.h2
+                                    style={{ opacity: scrollOpacity }}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0, transition: { duration: 1 } }}
+                                    className="text-white text-5xl md:text-8xl font-black uppercase tracking-tighter drop-shadow-lg mix-blend-exclusion font-heading"
+                                >
+                                    demo
+                                </motion.h2>
                             </div>
-                            <p className="text-white/50 text-sm font-mono">
-                                Demo video coming soon
-                            </p>
+                        )}
+                    </AnimatePresence>
+
+                    {/* Video wrapper */}
+                    <div className="w-full h-full bg-zinc-900 relative">
+                        {/* Placeholder gradient before video loads or if video is empty */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-zinc-950 flex items-center justify-center pointer-events-none">
+                            <p className="text-white/50 text-sm font-outfit">Demo video coming soon</p>
                         </div>
 
-                        {/*
-            Uncomment and replace with actual video:
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-              title="Unearth Demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-            */}
+                        {/* 
+                         <video
+                            className="w-full h-full object-cover relative z-10"
+                            autoPlay
+                            muted={isMuted}
+                            loop
+                            playsInline
+                            src="/demo.mp4"
+                        />
+                        */}
                     </div>
-                </div>
-            </SectionContainer>
-        </Section>
+                </motion.div>
+
+                {/* Audio Control */}
+                <button
+                    onClick={toggleMute}
+                    className="absolute bottom-8 right-8 top-auto z-30 p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white/20 transition-all active:scale-95 group-hover:opacity-100 opacity-0 duration-300"
+                    aria-label={isMuted ? "Unmute video" : "Mute video"}
+                >
+                    {isMuted ? <FaVolumeMute className="text-xl" /> : <FaVolumeUp className="text-xl" />}
+                </button>
+            </div>
+        </section>
     );
 }
