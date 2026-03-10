@@ -34,9 +34,9 @@ export default function HeroScene() {
         const handleScroll = () => {
             const heroHeight = window.innerHeight;
             const scrollY = window.scrollY;
-            // Slower: starts at 20%, fully scattered by 120% of hero height
+            // Slower: starts immediately, fully scattered by 120% of hero height
             const progress = Math.min(
-                Math.max((scrollY - heroHeight * 0.2) / (heroHeight * 1.0), 0),
+                Math.max(scrollY / (heroHeight * 1.2), 0),
                 1
             );
             setScrollProgress(progress);
