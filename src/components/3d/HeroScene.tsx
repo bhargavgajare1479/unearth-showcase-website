@@ -59,7 +59,7 @@ export default function HeroScene() {
                 color="#2563eb"
                 scrollProgress={scrollProgress}
                 introProgress={introProgress}
-                position={[2.5, 0.85, 0]}
+                position={[2.75, 0.85, 0]}
             />
         </Canvas>
     );

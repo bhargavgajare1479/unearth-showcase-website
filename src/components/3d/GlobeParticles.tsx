@@ -7,12 +7,15 @@ import * as THREE from "three";
 const VERTEX_SHADER = `
   attribute float aSize;
   attribute vec3 aScattered;
+  attribute vec3 aColor;
   uniform float uProgress;
   uniform float uTime;
   uniform float uPixelRatio;
   varying float vAlpha;
+  varying vec3 vColor;
 
   void main() {
+    vColor = aColor;
     vec3 pos = mix(position, aScattered, uProgress);
 
     // Very subtle breathing motion
@@ -34,7 +37,7 @@ const VERTEX_SHADER = `
 
 const FRAGMENT_SHADER = `
   varying float vAlpha;
-  uniform vec3 uColor;
+  varying vec3 vColor;
 
   void main() {
     // Sharp crisp circle
@@ -44,7 +47,7 @@ const FRAGMENT_SHADER = `
     // Slightly soften just the very edge
     float alpha = 1.0 - smoothstep(0.4, 0.5, dist);
 
-    gl_FragColor = vec4(uColor, alpha * vAlpha);
+    gl_FragColor = vec4(vColor, alpha * vAlpha);
   }
 `;
 
@@ -68,10 +71,19 @@ export default function GlobeParticles({
     const pointsRef = useRef<THREE.Points>(null);
     const materialRef = useRef<THREE.ShaderMaterial>(null);
 
-    const { positions, scattered, sizes } = useMemo(() => {
+    const { positions, scattered, sizes, colors } = useMemo(() => {
         const pos = new Float32Array(count * 3);
         const scat = new Float32Array(count * 3);
         const s = new Float32Array(count);
+        const col = new Float32Array(count * 3);
+
+        const baseColor = new THREE.Color(color);
+        const palette = [
+            baseColor, // Primary
+            new THREE.Color("#16a34a"), // Success Green
+            new THREE.Color("#f59e0b"), // Warning Amber
+            new THREE.Color("#dc2626"), // Error Red
+        ];
 
         const goldenRatio = (1 + Math.sqrt(5)) / 2;
 
@@ -96,27 +108,40 @@ export default function GlobeParticles({
 
             // Random sizes for variation
             s[i] = 0.4 + Math.random() * 0.75;
+
+            // Assign colors (85% base color, 15% random accents)
+            const rand = Math.random();
+            let c = palette[0];
+            if (rand > 0.85) {
+                if (rand > 0.95) c = palette[1];
+                else if (rand > 0.90) c = palette[2];
+                else c = palette[3];
+            }
+
+            col[i * 3] = c.r;
+            col[i * 3 + 1] = c.g;
+            col[i * 3 + 2] = c.b;
         }
 
-        return { positions: pos, scattered: scat, sizes: s };
-    }, [count, radius]);
+        return { positions: pos, scattered: scat, sizes: s, colors: col };
+    }, [count, radius, color]);
 
     const geometry = useMemo(() => {
         const geom = new THREE.BufferGeometry();
         geom.setAttribute("position", new THREE.BufferAttribute(positions, 3));
         geom.setAttribute("aScattered", new THREE.BufferAttribute(scattered, 3));
         geom.setAttribute("aSize", new THREE.BufferAttribute(sizes, 1));
+        geom.setAttribute("aColor", new THREE.BufferAttribute(colors, 3));
         return geom;
-    }, [positions, scattered, sizes]);
+    }, [positions, scattered, sizes, colors]);
 
     const uniforms = useMemo(
         () => ({
             uProgress: { value: 1 },
             uTime: { value: 0 },
-            uColor: { value: new THREE.Color(color) },
             uPixelRatio: { value: typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 2) : 1 },
         }),
-        [color]
+        []
     );
 
     useFrame((_, delta) => {
