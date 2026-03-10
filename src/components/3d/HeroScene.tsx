@@ -54,7 +54,7 @@ export default function HeroScene() {
             dpr={[1, 2]}
         >
             <GlobeParticles
-                count={4000}
+                count={2500}
                 radius={2.5}
                 color="#2563eb"
                 scrollProgress={scrollProgress}
