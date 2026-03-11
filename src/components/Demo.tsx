@@ -45,7 +45,7 @@ export default function Demo() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0, transition: { duration: 1 } }}
-                                    className="text-white text-5xl md:text-8xl font-black uppercase tracking-tighter drop-shadow-lg mix-blend-exclusion font-heading"
+                                    className="text-white text-5xl md:text-8xl uppercase tracking-tighter drop-shadow-lg mix-blend-exclusion text-nord-bold"
                                 >
                                     demo
                                 </motion.h2>
@@ -57,7 +57,7 @@ export default function Demo() {
                     <div className="w-full h-full bg-zinc-900 relative">
                         {/* Placeholder gradient before video loads or if video is empty */}
                         <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-zinc-950 flex items-center justify-center pointer-events-none">
-                            <p className="text-white/50 text-sm font-outfit">Demo video coming soon</p>
+                            <p className="text-white/50 text-sm text-outfit-regular">Demo video coming soon</p>
                         </div>
 
                         {/* 

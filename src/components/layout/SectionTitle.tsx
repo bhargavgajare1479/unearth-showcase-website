@@ -47,14 +47,14 @@ export default function SectionTitle({
 
     return (
         <div ref={containerRef} className="mb-16 space-y-4">
-            <p className="reveal-item text-sm uppercase tracking-widest text-primary">
+            <p className="reveal-item text-sm uppercase tracking-widest text-primary text-outfit-bold">
                 {label}
             </p>
-            <h2 className="reveal-item text-3xl sm:text-4xl font-bold leading-tight font-heading">
+            <h2 className="reveal-item text-3xl sm:text-4xl leading-tight text-nord-bold">
                 {title}
             </h2>
             {description && (
-                <p className="reveal-item text-text-muted text-lg max-w-xl leading-relaxed">
+                <p className="reveal-item text-text-muted text-lg max-w-xl leading-relaxed text-outfit-medium">
                     {description}
                 </p>
             )}

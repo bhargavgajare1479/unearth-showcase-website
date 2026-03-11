@@ -46,7 +46,7 @@ export default function Navbar() {
     return (
         <nav
             ref={navRef}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all font-outfit duration-300 ${scrolled ? "nav-glass" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "nav-glass" : "bg-transparent"
                 }`}
             style={{ opacity: 0 }}
         >
@@ -58,7 +58,7 @@ export default function Navbar() {
                         e.preventDefault();
                         handleClick("#hero");
                     }}
-                    className="text-lg font-bold tracking-tight"
+                    className="text-lg tracking-tight text-nord-bold"
                 >
                     <img src="logo.svg" alt="Unearth Logo" className="h-8 w-auto hover:opacity-80 transition-opacity" />
                 </a>
@@ -73,7 +73,7 @@ export default function Navbar() {
                                 e.preventDefault();
                                 handleClick(link.href);
                             }}
-                            className="text-sm text-text-muted hover:text-foreground transition-colors"
+                            className="text-sm text-text-muted hover:text-foreground transition-colors text-outfit-medium"
                         >
                             {link.label}
                         </a>
@@ -102,7 +102,7 @@ export default function Navbar() {
                                     e.preventDefault();
                                     handleClick(link.href);
                                 }}
-                                className="text-sm text-text-muted hover:text-foreground transition-colors py-2"
+                                className="text-sm text-text-muted hover:text-foreground transition-colors py-2 text-outfit-medium"
                             >
                                 {link.label}
                             </a>

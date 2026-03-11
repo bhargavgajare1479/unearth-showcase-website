@@ -108,7 +108,7 @@ export default function Features() {
     }, []);
 
     return (
-        <Section id="features" className="bg-background font-outfit">
+        <Section id="features" className="bg-background">
             <SectionContainer className="max-w-7xl">
                 <SectionTitle
                     label="Capabilities"
@@ -135,9 +135,9 @@ export default function Features() {
                                             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                                                 <Icon size={24} className="text-primary" />
                                             </div>
-                                            <h3 className="font-semibold text-lg font-heading leading-tight">{feature.title}</h3>
+                                            <h3 className=" text-lg leading-tight text-nord-bold">{feature.title}</h3>
                                         </div>
-                                        <p className="text-text-muted leading-relaxed text-sm lg:text-base flex-grow">
+                                        <p className="text-text-muted leading-relaxed text-sm lg:text-base flex-grow text-outfit-regular">
                                             {feature.description}
                                         </p>
                                     </div>

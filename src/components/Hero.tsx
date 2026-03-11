@@ -16,7 +16,7 @@ export default function Hero() {
   const taglineRef = useRef<HTMLParagraphElement>(null);
   const actionsRef = useRef<HTMLDivElement>(null);
 
-  const titleText = "Unearth".split("");
+  const titleText = "UNEARTH".split("");
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -53,19 +53,18 @@ export default function Hero() {
         <HeroScene />
       </div>
 
-      {/* Bottom-left content */}
       <div className="absolute bottom-0 left-0 w-full px-8 sm:px-16 pb-20 sm:pb-28">
         <div className="mx-auto max-w-6xl">
           <div className="space-y-6 relative z-10 max-w-xl">
             <p
               ref={labelRef}
-              className="text-sm uppercase tracking-widest text-primary font-bold"
+              className="text-sm uppercase tracking-widest text-primary text-outfit-bold"
               style={{ opacity: 0 }}
             >
               Digital Forensics Platform
             </p>
 
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-none flex font-heading">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-none flex uppercase text-nord-bold">
               {titleText.map((char, i) => (
                 <span
                   key={i}
@@ -82,7 +81,7 @@ export default function Hero() {
 
             <p
               ref={taglineRef}
-              className="text-xl text-text-secondary leading-relaxed max-w-md font-medium"
+              className="text-xl text-text-secondary leading-relaxed max-w-md text-outfit-medium"
               style={{ opacity: 0 }}
             >
               Exposing what lies beneath the surface...
@@ -94,7 +93,7 @@ export default function Hero() {
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
                   href="#demo"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-xl font-medium hover:bg-primary-dark transition-all hover:shadow-lg hover:shadow-primary/20"
+                  className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-xl text-outfit-medium hover:bg-primary-dark transition-all hover:shadow-lg hover:shadow-primary/20"
                 >
                   View Demo
                 </a>
@@ -103,7 +102,7 @@ export default function Hero() {
                   href="https://github.com/bhargavgajare1479/unearth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white/50 border border-foreground/10 text-foreground px-7 py-3.5 rounded-xl font-medium hover:bg-white transition-all"
+                  className="inline-flex items-center gap-2 bg-white/50 border border-foreground/10 text-foreground px-7 py-3.5 rounded-xl text-outfit-medium hover:bg-white transition-all"
                 >
                   View Source
                 </a>

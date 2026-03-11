@@ -106,7 +106,7 @@ export default function Team() {
                             <div key={member.name} className={`team-card p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex flex-col h-full ${stretchClass}`}>
                                 {/* Avatar placeholder */}
                                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto sm:mx-0">
-                                    <span className="text-xl font-bold text-primary">
+                                    <span className="text-xl text-primary text-nord-bold">
                                         {member.name
                                             .split(" ")
                                             .map((n) => n[0])
@@ -115,10 +115,10 @@ export default function Team() {
                                     </span>
                                 </div>
 
-                                <h3 className="text-xl font-bold font-heading text-foreground mb-1 text-center sm:text-left">{member.name}</h3>
-                                <p className="text-primary font-medium text-sm mb-4 text-center sm:text-left">{member.role}</p>
+                                <h3 className="text-xl text-foreground mb-1 text-center sm:text-left text-nord-bold">{member.name}</h3>
+                                <p className="text-primary text-sm mb-4 text-center sm:text-left text-outfit-medium">{member.role}</p>
 
-                                <p className="text-text-muted text-sm leading-relaxed mb-8 flex-grow text-center sm:text-left">
+                                <p className="text-text-muted text-sm leading-relaxed mb-8 flex-grow text-center sm:text-left text-outfit-regular">
                                     {member.work}
                                 </p>
 

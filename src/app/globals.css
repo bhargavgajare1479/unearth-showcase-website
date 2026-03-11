@@ -1,5 +1,91 @@
 @import "tailwindcss";
 
+/* ── Custom Font Faces ── */
+@font-face {
+    font-family: 'Nord';
+    src: url('/fonts/nord/Nord-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nord';
+    src: url('/fonts/nord/Nord-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nord';
+    src: url('/fonts/nord/Nord-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/outfit/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/outfit/Outfit-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/outfit/Outfit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/outfit/Outfit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ── Custom Typography Classes ── */
+.text-nord-regular {
+    font-family: 'Nord', sans-serif;
+    font-weight: 400;
+}
+
+.text-nord-medium {
+    font-family: 'Nord', sans-serif;
+    font-weight: 500;
+}
+
+.text-nord-bold {
+    font-family: 'Nord', sans-serif;
+    font-weight: 700;
+}
+
+.text-outfit-regular {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+}
+
+.text-outfit-medium {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+}
+
+.text-outfit-semibold {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+}
+
+.text-outfit-bold {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
 :root {
     /* Core colors */
     --background: #ffffff;
@@ -21,8 +107,6 @@
     --error: #dc2626;
 
     /* Fonts */
-    --font-heading: var(--font-nord);
-    --font-content: var(--font-outfit);
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
@@ -42,8 +126,6 @@
     --color-text-secondary: var(--text-secondary);
     --color-text-muted: var(--text-muted);
 
-    --font-heading: var(--font-heading);
-    --font-content: var(--font-content);
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
