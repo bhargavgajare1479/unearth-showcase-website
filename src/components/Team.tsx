@@ -31,25 +31,25 @@ const TEAM = [
         name: "Mr. Divesh K. Dalvi",
         role: "Web Developer",
         work: "Designed and developed the project website and user interfaces. Built the frontend using modern web technologies and ensured the platform was responsive, interactive, and easy to navigate.",
-        github: "",
-        linkedin: "",
-        email: ""
+        github: "https://github.com/diveshdalvi",
+        linkedin: "https://www.linkedin.com/in/divesh-dalvi",
+        email: "dalvidivesh1@gmail.com"
     },
     {
         name: "Mr. Nachiket D. Patil",
-        role: "AI Developer",
+        role: "AI Engineer",
         work: "Developed the AI analysis components used for content evaluation. Implemented the logic for analysing text, images, videos, and URLs to identify misinformation patterns and contextual insights.",
-        github: "",
-        linkedin: "",
-        email: ""
+        github: "https://github.com/NachiketPatil26",
+        linkedin: "https://www.linkedin.com/in/nachiketpatil-design",
+        email: "nachi.patil26@gmail.com"
     },
     {
         name: "Mr. Aayush Y. Thoke",
         role: "Documentation Manager",
         work: "Prepared and maintained the project documentation. Organised technical explanations, research references, and reports to clearly describe the system architecture, methodology, and project outcomes.",
-        github: "",
-        linkedin: "",
-        email: ""
+        github: "https://github.com/AayushThoke",
+        linkedin: "https://www.linkedin.com/in/aayushthoke",
+        email: "aayushthoke3105@gmail.com"
     }
 ];
 

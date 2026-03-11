@@ -58,7 +58,7 @@ export default function Hero() {
           <div className="space-y-4 sm:space-y-6 relative z-10 max-w-2xl">
             <p
               ref={labelRef}
-              className="text-xs sm:text-sm md:text-base uppercase tracking-widest text-primary text-outfit-bold"
+              className="text-xs sm:text-sm md:text-base uppercase tracking-widest text-primary text-outfit-light"
               style={{ opacity: 0 }}
             >
               Digital Forensics Platform

@@ -132,7 +132,7 @@ export default function Project() {
                 <SectionTitle
                     label="About"
                     title="The Idea Behind Unearth"
-                    description="A unified platform for digital forensic investigation that brings together data recovery and intelligent analysis."
+                    description="A unified platform for digital forensic investigation that brings together data recovery and intelligent analysis..."
                 />
 
                 <div
