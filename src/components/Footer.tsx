@@ -28,7 +28,7 @@ export default function Footer() {
                 {/* Bottom Separator & Copyright */}
                 <div className="pt-8 border-t border-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-6">
                     <span className="text-xs sm:text-sm text-text-muted text-outfit-regular text-center sm:text-left">
-                        © {new Date().getFullYear()} Unearth Protocol. All rights reserved.
+                        © {new Date().getFullYear()} Unearth. All rights reserved.
                     </span>
 
                     <div className="flex items-center gap-4 sm:gap-6">
