@@ -30,7 +30,7 @@ const FEATURES = [
     },
     {
         icon: FileDigit,
-        title: "File Carving and Format Detection",
+        title: "File Carving & Format Detection",
         description:
             "The platform scans raw disk data and identifies files using their unique signatures, also known as magic numbers. This allows the system to detect and recover files even when file names or extensions are missing.",
     },
@@ -60,7 +60,7 @@ const FEATURES = [
     },
     {
         icon: Brain,
-        title: "AI-Based Media and Content Analysis",
+        title: "AI-Based Media & Content Analysis",
         description:
             "Unearth includes an AI analysis component that can examine images, videos, audio, text, and URLs. It helps identify manipulated media, analyse content context, and evaluate the credibility of information.",
     },
@@ -118,7 +118,7 @@ export default function Features() {
 
                 <div
                     ref={gridRef}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mt-8"
                 >
                     {FEATURES.map((feature) => {
                         const Icon = feature.icon;
@@ -130,14 +130,14 @@ export default function Features() {
                                     rotateAmplitude={12}
                                     scaleOnHover={1.02}
                                 >
-                                    <div className="flex flex-col h-full">
-                                        <div className="flex items-center gap-4 mb-5">
-                                            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                                <Icon size={24} className="text-primary" />
+                                    <div className="flex flex-col h-full p-4 sm:p-6 md:p-8 lg:p-10">
+                                        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 xl:w-16 xl:h-16 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                                <Icon className="text-primary w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 xl:w-8 xl:h-8" />
                                             </div>
-                                            <h3 className=" text-lg leading-tight text-nord-bold">{feature.title}</h3>
+                                            <h3 className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl leading-tight text-outfit-bold">{feature.title}</h3>
                                         </div>
-                                        <p className="text-text-muted leading-relaxed text-sm lg:text-base flex-grow text-outfit-regular">
+                                        <p className="text-text-muted leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl flex-grow text-outfit-regular">
                                             {feature.description}
                                         </p>
                                     </div>

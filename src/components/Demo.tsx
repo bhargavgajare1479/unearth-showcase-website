@@ -45,7 +45,7 @@ export default function Demo() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0, transition: { duration: 1 } }}
-                                    className="text-white text-5xl md:text-8xl uppercase tracking-tighter drop-shadow-lg mix-blend-exclusion text-nord-bold"
+                                    className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl uppercase tracking-tighter drop-shadow-lg mix-blend-exclusion text-nord-bold"
                                 >
                                     demo
                                 </motion.h2>

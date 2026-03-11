@@ -137,26 +137,26 @@ export default function Project() {
 
                 <div
                     ref={blocksRef}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[minmax(180px,auto)]"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 auto-rows-[minmax(180px,auto)]"
                 >
                     {BLOCKS.map((block, index) => {
                         // Dynamically assign grid spans based on the item index to create the Bento effect
                         let gridClass = "";
-                        if (index === 0) gridClass = "md:col-span-2 row-span-2"; // Problem Statement is full width 
-                        else if (index === 1) gridClass = "md:col-span-2 row-span-2"; // Proposed Solution is full width
-                        else gridClass = "md:col-span-1 row-span-1"; // Vision & Mission are equal side-by-side cards
+                        if (index === 0) gridClass = "lg:col-span-2 row-span-2"; // Problem Statement is full width 
+                        else if (index === 1) gridClass = "lg:col-span-2 row-span-2"; // Proposed Solution is full width
+                        else gridClass = "lg:col-span-1 row-span-1"; // Vision & Mission are equal side-by-side cards
 
                         return (
                             <div
                                 key={block.label}
-                                className={`project-block p-8 sm:p-10 rounded-3xl bg-zinc-50 border border-zinc-100 flex flex-col justify-between hover:border-primary/20 hover:shadow-lg transition-all duration-300 ${gridClass}`}
+                                className={`project-block p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-3xl bg-zinc-50 border border-zinc-100 flex flex-col justify-between hover:border-primary/20 hover:shadow-lg transition-all duration-300 ${gridClass}`}
                             >
                                 <div>
                                     <div className="flex items-center gap-4 mb-6">
-                                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-sm text-nord-bold">
+                                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-sm text-outfit-bold">
                                             {block.label}
                                         </span>
-                                        <h3 className="text-xl sm:text-2xl text-foreground text-nord-bold">
+                                        <h3 className="text-xl sm:text-2xl text-foreground text-outfit-bold">
                                             {block.title}
                                         </h3>
                                     </div>

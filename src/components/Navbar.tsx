@@ -50,7 +50,7 @@ export default function Navbar() {
                 }`}
             style={{ opacity: 0 }}
         >
-            <div className="mx-auto max-w-6xl flex items-center justify-between px-6 sm:px-10 py-4">
+            <div className="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-3 sm:py-4">
                 {/* Logo */}
                 <a
                     href="#hero"

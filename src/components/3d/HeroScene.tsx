@@ -8,6 +8,37 @@ export default function HeroScene() {
     const [scrollProgress, setScrollProgress] = useState(0);
     const [introProgress, setIntroProgress] = useState(1);
     const introRef = useRef({ start: 0 });
+    const [globeConfig, setGlobeConfig] = useState({
+        radius: 2.5,
+        position: [2.75, 0.85, 0] as [number, number, number]
+    });
+
+    // Handle responsive globe sizing
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 425) {
+                // Mobile
+                setGlobeConfig({ radius: 1.2, position: [0, 1.8, 0] });
+            } else if (width < 768) {
+                // Tablet
+                setGlobeConfig({ radius: 1.5, position: [0, 1.5, 0] });
+            } else if (width < 1024) {
+                // Small Laptop
+                setGlobeConfig({ radius: 1.8, position: [1.2, 0.8, 0] });
+            } else if (width < 1440) {
+                // Desktop
+                setGlobeConfig({ radius: 2.1, position: [2.0, 0.5, 0] });
+            } else {
+                // Large Desktop
+                setGlobeConfig({ radius: 2.3, position: [2.5, 0.5, 0] });
+            }
+        };
+
+        handleResize(); // Initial check
+        window.addEventListener("resize", handleResize, { passive: true });
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     // Intro animation — form the globe on load (slow)
     useEffect(() => {
@@ -55,11 +86,11 @@ export default function HeroScene() {
         >
             <GlobeParticles
                 count={2500}
-                radius={2.5}
+                radius={globeConfig.radius}
                 color="#2563eb"
                 scrollProgress={scrollProgress}
                 introProgress={introProgress}
-                position={[2.75, 0.85, 0]}
+                position={globeConfig.position}
             />
         </Canvas>
     );

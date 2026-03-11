@@ -39,7 +39,7 @@ export default function InstallCommand() {
       </code>
       <button
         onClick={handleCopy}
-        className="flex-shrink-0 flex items-center gap-2 bg-primary hover:bg-primary text-white px-4 py-2 rounded-xl text-sm transition-colors"
+        className="flex-shrink-0 flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors text-outfit-medium"
       >
         {copied ? <Check size={16} /> : <Copy size={16} />}
         {copied ? "Copied" : "Copy link"}

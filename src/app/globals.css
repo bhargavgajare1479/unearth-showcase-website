@@ -127,6 +127,14 @@
     --color-text-muted: var(--text-muted);
 
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Responsive Breakpoints */
+    --breakpoint-xs: 320px;
+    --breakpoint-sm: 375px;
+    --breakpoint-md: 425px;
+    --breakpoint-lg: 768px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1440px;
 }
 
 * {

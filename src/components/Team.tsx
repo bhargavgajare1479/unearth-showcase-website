@@ -93,20 +93,20 @@ export default function Team() {
 
                 <div
                     ref={gridRef}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
                 >
                     {TEAM.map((member, index) => {
                         // Guide (index 0) gets centered its own row, visually matching the width of 1 standard column
                         const isGuide = index === 0;
                         const stretchClass = isGuide
-                            ? "md:col-span-2 justify-self-center w-full md:w-[calc(50%-12px)]"
+                            ? "lg:col-span-2 justify-self-center w-full lg:w-[calc(50%-12px)]"
                             : "w-full";
 
                         return (
-                            <div key={member.name} className={`team-card p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex flex-col h-full ${stretchClass}`}>
+                            <div key={member.name} className={`team-card p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex flex-col h-full ${stretchClass}`}>
                                 {/* Avatar placeholder */}
                                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto sm:mx-0">
-                                    <span className="text-xl text-primary text-nord-bold">
+                                    <span className="text-xl text-primary text-outfit-bold">
                                         {member.name
                                             .split(" ")
                                             .map((n) => n[0])
@@ -115,7 +115,7 @@ export default function Team() {
                                     </span>
                                 </div>
 
-                                <h3 className="text-xl text-foreground mb-1 text-center sm:text-left text-nord-bold">{member.name}</h3>
+                                <h3 className="text-xl text-foreground mb-1 text-center sm:text-left text-outfit-bold">{member.name}</h3>
                                 <p className="text-primary text-sm mb-4 text-center sm:text-left text-outfit-medium">{member.role}</p>
 
                                 <p className="text-text-muted text-sm leading-relaxed mb-8 flex-grow text-center sm:text-left text-outfit-regular">

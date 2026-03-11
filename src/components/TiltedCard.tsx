@@ -136,7 +136,7 @@ export default function TiltedCard({
 
                 {/* Render children (like feature text) as the primary content if no image is passed or if both exist */}
                 {children && (
-                    <div className="w-full h-full text-left p-8 rounded-2xl bg-zinc-50 border border-zinc-100 flex flex-col tilted-card-content-bg shadow-sm">
+                    <div className="w-full h-full text-left rounded-3xl bg-zinc-50 border border-zinc-100 flex flex-col tilted-card-content-bg shadow-sm overflow-hidden">
                         {children}
                     </div>
                 )}
