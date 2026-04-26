@@ -28,12 +28,12 @@ const BLOCKS = [
                         <h4 className="text-foreground text-outfit-semibold">2. Fragmented investigation tools</h4>
                         <p>Digital forensic investigations usually involve multiple stages such as data recovery, metadata analysis, and content examination. These tasks are often handled by separate tools. Investigators are forced to switch between different software, which slows down the process and increases the chances of missing critical evidence.</p>
                     </div>
-                    <div>
+                    {/* <div>
                         <h4 className="text-foreground text-outfit-semibold">3. Growing complexity of digital evidence</h4>
                         <p>Digital evidence is no longer limited to files stored on a device. Images, videos, documents, and online content can all play a role in an investigation. Identifying manipulated media or misleading information requires additional analysis, which many traditional forensic tools do not support.</p>
-                    </div>
+                    </div> */}
                     <div>
-                        <h4 className="text-foreground text-outfit-semibold">4. Lack of integrated analysis platforms</h4>
+                        <h4 className="text-foreground text-outfit-semibold">3. Lack of integrated analysis platforms</h4>
                         <p>Most tools focus on only one part of the investigation process. There are very few platforms that combine evidence recovery with deeper analysis in a single environment. This makes investigations less efficient and harder to manage.</p>
                     </div>
                 </div>
@@ -69,13 +69,13 @@ const BLOCKS = [
                         <h4 className="text-foreground text-outfit-semibold">4. Evidence integrity and verification</h4>
                         <p>To maintain the authenticity of recovered data, Unearth generates a SHA256 hash for every recovered file. This allows investigators to verify that the evidence has not been altered and supports proper chain-of-custody practices.</p>
                     </div>
-                    <div>
+                    {/* <div>
                         <h4 className="text-foreground text-outfit-semibold">5. Intelligent content analysis</h4>
                         <p>Unearth also includes an AI-assisted analysis component that can evaluate images, videos, audio, text, and URLs. This helps investigators detect manipulated media, analyse suspicious content, and assess the credibility of online information.</p>
-                    </div>
+                    </div> */}
                     <div>
-                        <h4 className="text-foreground text-outfit-semibold">6. Accessible investigation tools</h4>
-                        <p>The platform provides both a command-line interface and a graphical interface, making it usable for both technical experts and investigators who prefer a visual environment. A browser extension also allows users to analyse content directly from web pages.</p>
+                        <h4 className="text-foreground text-outfit-semibold">5. Accessible investigation tools</h4>
+                        <p>The platform provides both a command-line interface and a graphical interface, making it usable for both technical experts and investigators who prefer a visual environment.</p>
                     </div>
                 </div>
                 <p className="pt-2">
