@@ -11,87 +11,88 @@ import SectionTitle from "@/components/layout/SectionTitle";
 gsap.registerPlugin(ScrollTrigger);
 
 const TEAM = [
-    {
-        name: "Dr. Anjalidevi Patil",
-        role: "Project Guide",
-        work: "Provided academic guidance and technical direction throughout the project. Reviewed the system design, ensured the approach followed proper forensic practices, and helped refine the overall research and implementation strategy.",
-        github: "",
-        linkedin: "",
-        email: ""
-    },
-    {
-        name: "Mr. Bhargav S. Gajare",
-        role: "Project Manager & Linux Expert",
-        work: "Led the overall development of the project and coordinated the team. Designed the system architecture, implemented the core forensic recovery modules, and handled Linux-based filesystem analysis for Btrfs and XFS.",
-        github: "https://github.com/bhargavgajare1479",
-        linkedin: "https://www.linkedin.com/in/bhargavsg/",
-        email: "gajarebhargav@gmail.com"
-    },
-    {
-        name: "Mr. Divesh K. Dalvi",
-        role: "Web Developer",
-        work: "Designed and developed the project website and user interfaces. Built the frontend using modern web technologies and ensured the platform was responsive, interactive, and easy to navigate.",
-        github: "https://github.com/diveshdalvi",
-        linkedin: "https://www.linkedin.com/in/divesh-dalvi",
-        email: "dalvidivesh1@gmail.com"
-    },
-    {
-        name: "Mr. Nachiket D. Patil",
-        role: "AI Engineer",
-        work: "Developed the AI analysis components used for content evaluation. Implemented the logic for analysing text, images, videos, and URLs to identify misinformation patterns and contextual insights.",
-        github: "https://github.com/NachiketPatil26",
-        linkedin: "https://www.linkedin.com/in/nachiketpatil-design",
-        email: "nachi.patil26@gmail.com"
-    },
-    {
-        name: "Mr. Aayush Y. Thoke",
-        role: "Documentation Manager",
-        work: "Prepared and maintained the project documentation. Organised technical explanations, research references, and reports to clearly describe the system architecture, methodology, and project outcomes.",
-        github: "https://github.com/AayushThoke",
-        linkedin: "https://www.linkedin.com/in/aayushthoke",
-        email: "aayushthoke3105@gmail.com"
-    }
+  // {
+  //     name: "Dr. Anjalidevi Patil",
+  //     role: "Project Guide",
+  //     work: "Provided academic guidance and technical direction throughout the project. Reviewed the system design, ensured the approach followed proper forensic practices, and helped refine the overall research and implementation strategy.",
+  //     github: "",
+  //     linkedin: "",
+  //     email: ""
+  // },
+  {
+    name: "Mr. Bhargav S. Gajare",
+    role: "Project Manager",
+    work: "Led the overall development of the project, showcase website and coordinated the team. Designed the system architecture, implemented the core forensic recovery modules, and handled Linux-based filesystem analysis for Btrfs and XFS.",
+    github: "https://github.com/bhargavgajare1479",
+    linkedin: "https://www.linkedin.com/in/bhargavsg/",
+    email: "gajarebhargav@gmail.com"
+  },
+  {
+    name: "Mr. Divesh K. Dalvi",
+    role: "Web Developer",
+    work: "Designed and developed the project website and user interfaces. Built the frontend using modern web technologies and ensured the platform was responsive, interactive, and easy to navigate.",
+    github: "https://github.com/diveshdalvi",
+    linkedin: "https://www.linkedin.com/in/divesh-dalvi",
+    email: "dalvidivesh1@gmail.com"
+  },
+  {
+    name: "Mr. Nachiket D. Patil",
+    role: "AI Engineer",
+    work: "Developed the AI analysis components used for content evaluation. Implemented the logic for analysing text, images, videos, and URLs to identify misinformation patterns and contextual insights.",
+    github: "https://github.com/NachiketPatil26",
+    linkedin: "https://www.linkedin.com/in/nachiketpatil-design",
+    email: "nachi.patil26@gmail.com"
+  },
+  {
+    name: "Mr. Aayush Y. Thoke",
+    role: "Documentation Manager",
+    work: "Prepared and maintained the project documentation. Organised technical explanations, research references, and reports to clearly describe the system architecture, methodology, and project outcomes.",
+    github: "https://github.com/AayushThoke",
+    linkedin: "https://www.linkedin.com/in/aayushthoke",
+    email: "aayushthoke3105@gmail.com"
+  }
 ];
 
 export default function Team() {
-    const gridRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            const cards = gridRef.current?.querySelectorAll(".team-card");
-            if (!cards) return;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = gridRef.current?.querySelectorAll(".team-card");
+      if (!cards) return;
 
-            gsap.fromTo(
-                cards,
-                { y: 40, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    stagger: 0.1,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: gridRef.current,
-                        start: "top 80%",
-                        once: true,
-                    },
-                }
-            );
-        }, gridRef);
+      gsap.fromTo(
+        cards,
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 80%",
+            once: true,
+          },
+        }
+      );
+    }, gridRef);
 
-        return () => ctx.revert();
-    }, []);
+    return () => ctx.revert();
+  }, []);
 
-    return (
-        <Section id="team" className="bg-background min-h-0">
-            <SectionContainer className="max-w-7xl">
-                <SectionTitle
-                    label="Team"
-                    title="Meet the Developers"
-                    description="The individuals who are the backbone of Unearth..."
-                />
+  return (
+    <Section id="team" className="bg-background min-h-0">
+      <SectionContainer className="max-w-7xl">
+        <SectionTitle
+          label="Team"
+          title="Meet the Developers"
+          description="The individuals who are the backbone of Unearth..."
+        />
 
-                <div
+        {/* OLD LAYOUT — commented out (first card was spanning full row, leaving row 1 with only 1 card) */}
+        {/* <div
                     ref={gridRef}
                     className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
                 >
@@ -103,57 +104,66 @@ export default function Team() {
                             : "w-full";
 
                         return (
-                            <div key={member.name} className={`team-card p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex flex-col h-full ${stretchClass}`}>
-                                {/* Avatar placeholder */}
-                                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto sm:mx-0">
-                                    <span className="text-xl text-primary text-outfit-bold">
-                                        {member.name
-                                            .split(" ")
-                                            .map((n) => n[0])
-                                            .join("")
-                                            .substring(0, 2)}
-                                    </span>
-                                </div>
+                            <div key={member.name} className={`team-card p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex flex-col h-full ${stretchClass}`}> */}
 
-                                <h3 className="text-xl text-foreground mb-1 text-center sm:text-left text-outfit-bold">{member.name}</h3>
-                                <p className="text-primary text-sm mb-4 text-center sm:text-left text-outfit-medium">{member.role}</p>
-
-                                <p className="text-text-muted text-sm leading-relaxed mb-8 flex-grow text-center sm:text-left text-outfit-regular">
-                                    {member.work}
-                                </p>
-
-                                <div className="flex items-center gap-3 mt-auto justify-center sm:justify-start">
-                                    <a
-                                        href={member.github || "#"}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2.5 rounded-xl bg-black/5 hover:bg-black/10 text-text-secondary transition-colors"
-                                        aria-label={`${member.name} GitHub`}
-                                    >
-                                        <Github size={18} />
-                                    </a>
-                                    <a
-                                        href={member.linkedin || "#"}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2.5 rounded-xl bg-black/5 hover:bg-black/10 text-text-secondary transition-colors"
-                                        aria-label={`${member.name} LinkedIn`}
-                                    >
-                                        <Linkedin size={18} />
-                                    </a>
-                                    <a
-                                        href={member.email ? `mailto:${member.email}` : "#"}
-                                        className="p-2.5 rounded-xl bg-black/5 hover:bg-black/10 text-text-secondary transition-colors"
-                                        aria-label={`${member.name} Email`}
-                                    >
-                                        <Mail size={18} />
-                                    </a>
-                                </div>
-                            </div>
-                        );
-                    })}
+        {/* NEW LAYOUT — 2 rows × 2 cards each (all 4 members in a clean 2×2 grid) */}
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
+        >
+          {TEAM.map((member) => {
+            return (
+              <div key={member.name} className={`team-card p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex flex-col h-full w-full`}>
+                {/* Avatar placeholder */}
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto sm:mx-0">
+                  <span className="text-xl text-primary text-outfit-bold">
+                    {member.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")
+                      .substring(0, 2)}
+                  </span>
                 </div>
-            </SectionContainer>
-        </Section>
-    );
+
+                <h3 className="text-xl text-foreground mb-1 text-center sm:text-left text-outfit-bold">{member.name}</h3>
+                <p className="text-primary text-sm mb-4 text-center sm:text-left text-outfit-medium">{member.role}</p>
+
+                <p className="text-text-muted text-sm leading-relaxed mb-8 flex-grow text-center sm:text-left text-outfit-regular">
+                  {member.work}
+                </p>
+
+                <div className="flex items-center gap-3 mt-auto justify-center sm:justify-start">
+                  <a
+                    href={member.github || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl bg-black/5 hover:bg-black/10 text-text-secondary transition-colors"
+                    aria-label={`${member.name} GitHub`}
+                  >
+                    <Github size={18} />
+                  </a>
+                  <a
+                    href={member.linkedin || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl bg-black/5 hover:bg-black/10 text-text-secondary transition-colors"
+                    aria-label={`${member.name} LinkedIn`}
+                  >
+                    <Linkedin size={18} />
+                  </a>
+                  <a
+                    href={member.email ? `mailto:${member.email}` : "#"}
+                    className="p-2.5 rounded-xl bg-black/5 hover:bg-black/10 text-text-secondary transition-colors"
+                    aria-label={`${member.name} Email`}
+                  >
+                    <Mail size={18} />
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </SectionContainer>
+    </Section>
+  );
 }
