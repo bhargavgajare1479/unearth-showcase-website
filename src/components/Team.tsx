@@ -37,8 +37,8 @@ const TEAM = [
   },
   {
     name: "Mr. Nachiket D. Patil",
-    role: "AI Engineer",
-    work: "Developed the AI analysis components used for content evaluation. Implemented the logic for analysing text, images, videos, and URLs to identify misinformation patterns and contextual insights.",
+    role: "UI/UX Designer",
+    work: "Designed the user interface and overall user experience for the platform. Created wireframes, mockups, and prototypes to ensure the system was intuitive, user-friendly, and visually appealing.",
     github: "https://github.com/NachiketPatil26",
     linkedin: "https://www.linkedin.com/in/nachiketpatil-design",
     email: "nachi.patil26@gmail.com"
