@@ -58,18 +58,18 @@ const FEATURES = [
         description:
             "Investigators can search through recovered text files using keywords. This makes it easier to locate specific information such as passwords, confidential terms, or other relevant content.",
     },
-    {
-        icon: Brain,
-        title: "AI-Based Media & Content Analysis",
-        description:
-            "Unearth includes an AI analysis component that can examine images, videos, audio, text, and URLs. It helps identify manipulated media, analyse content context, and evaluate the credibility of information.",
-    },
-    {
-        icon: Globe,
-        title: "Browser Extension for Quick Analysis",
-        description:
-            "A browser extension allows users to analyse content directly from web pages or social media posts. This makes it easier to investigate suspicious online content without leaving the browser.",
-    },
+    // {
+    //     icon: Brain,
+    //     title: "AI-Based Media & Content Analysis",
+    //     description:
+    //         "Unearth includes an AI analysis component that can examine images, videos, audio, text, and URLs. It helps identify manipulated media, analyse content context, and evaluate the credibility of information.",
+    // },
+    // {
+    //     icon: Globe,
+    //     title: "Browser Extension for Quick Analysis",
+    //     description:
+    //         "A browser extension allows users to analyse content directly from web pages or social media posts. This makes it easier to investigate suspicious online content without leaving the browser.",
+    // },
     {
         icon: Terminal,
         title: "Multiple User Interfaces",
@@ -113,7 +113,7 @@ export default function Features() {
                 <SectionTitle
                     label="Capabilities"
                     title="Core Features"
-                    description="A complete toolkit designed for digital forensic investigation and content analysis..."
+                    description="A complete toolkit designed for digital forensic investigation..."
                 />
 
                 <div
