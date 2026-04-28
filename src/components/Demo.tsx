@@ -35,11 +35,11 @@ export default function Demo() {
             <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden group">
                 <motion.div
                     style={{ scale }}
-                    className="w-full h-full relative"
+                    className="w-full h-full relative flex items-center justify-center p-4 md:p-8"
                 >
                     <AnimatePresence>
                         {showText && (
-                            <div className="absolute inset-0 bg-black/10 z-10 flex items-center justify-center pointer-events-none">
+                            <div className="absolute inset-0 bg-black/10 z-20 flex items-center justify-center pointer-events-none">
                                 <motion.h2
                                     style={{ opacity: scrollOpacity }}
                                     initial={{ opacity: 0 }}
@@ -54,22 +54,15 @@ export default function Demo() {
                     </AnimatePresence>
 
                     {/* Video wrapper */}
-                    <div className="w-full h-full bg-zinc-900 relative">
-                        {/* Placeholder gradient before video loads or if video is empty */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-zinc-950 flex items-center justify-center pointer-events-none">
-                            <p className="text-white/50 text-sm text-outfit-regular">Demo video coming soon</p>
-                        </div>
-
-                        {/* 
-                         <video
-                            className="w-full h-full object-cover relative z-10"
+                    <div className="relative flex max-w-full max-h-full border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+                        <video
+                            className="max-w-full max-h-full w-auto h-auto relative z-10 block"
                             autoPlay
                             muted={isMuted}
                             loop
                             playsInline
                             src="/demo.mp4"
                         />
-                        */}
                     </div>
                 </motion.div>
 
